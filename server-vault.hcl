@@ -1,15 +1,15 @@
+ui = true
+disable_mlock = true
+
 storage "consul" {
   address = "127.0.0.1:8500"
   path    = "vault/"
 }
-ui = true
 
 listener "tcp" {
-  address     = "127.0.0.1:8200"
-  tls_disable = 1
+  address     = "0.0.0.0:8200"
+  tls_disable = "true"
 }
 
-telemetry {
-  statsite_address = "127.0.0.1:8125"
-  disable_hostname = true
-}
+api_addr = "http://127.0.0.1:8200"
+cluster_addr = "https://127.0.0.1:8201"
