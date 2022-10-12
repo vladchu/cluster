@@ -5,7 +5,7 @@ server {
   bootstrap_expect = 1
   job_gc_threshold = "2m"
   server_join {
-    retry_join = "10.0.0.100"
+    retry_join = ["10.0.0.100"]
     retry_max = 10
     retry_interval = "15s"
   }
@@ -29,7 +29,7 @@ plugin "raw_exec" {
 client {
   enabled           = true
   network_interface = "eth0"
-  servers           = "10.0.0.100"
+  servers           = ["10.0.0.100"]
 
   host_volume "certs" {
     path      = "/data/certs"
